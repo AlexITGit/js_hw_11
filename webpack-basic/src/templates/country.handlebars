@@ -1,0 +1,55 @@
+<div class="country_placeholder">
+  <div class="country__div">
+    {{#each this}}
+      <h2 class="head_name">{{name.official}}</h2>
+      
+      <div class="country__header">
+        <span class="name">Official name: </span>{{name.official}}
+        <br />
+        <span class="name">Native name: </span>{{name.common}}
+        <br />
+      </div>
+
+      <div class="country__name">
+        <span class="n_name"> NativeName </span>
+        <br />
+        {{#each name.nativeName}}
+          <div class="native__names">
+            {{@key}}:
+            <br />
+            {{#each this}}
+              <span> {{@key}}: {{this}}</span>
+              <br />
+            {{/each}}
+          </div>
+        {{/each}}
+      </div>
+
+      <div class="country__capital">
+        <span class="name"> Capital: </span>
+        <span class="capital"> {{capital}}</span>
+        <br />
+      </div>
+
+      <div class="country__population">
+        <span class="name"> Population: </span>
+        <span class="population"> {{population}}</span>
+        <br />
+      </div>
+
+      <div class="country__languages">
+        <span class="name"> Languages: </span>
+        <br />
+        {{#each languages}}
+          <span>{{@key}}: {{this}}</span>
+          <br />
+        {{/each}}
+      </div>
+
+      <div class="country__flag">
+        <img class="flag" src="{{flags.png}}" />
+      </div>
+
+    {{/each}}
+  </div>
+</div>

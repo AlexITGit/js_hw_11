@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #212121;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: white;
+}
+
+p {
+  margin: 5px;
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  color: #5a5a5a;
+  background: #fff;
+  padding: 10px;
+  transition: 1s linear;
+}
+li:hover {
+  color: #fff;
+  background: #33c3f0;
+}
+
+.basicLightbox {
+  padding: 5px 0;
+}
+
+.basicLightbox__placeholder {
+  max-height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: auto;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.basicLightbox__placeholder::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.search {
+  border-radius: 10px;
+  margin: 5px;
+  border: 1px solid lightslategrey;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.country__div {
+  top: 100px;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  margin: 5px;
+  padding: 5px;
+}
+
+.head_name,
+.country__name,
+.name {
+  font-weight: 600;
+}
+
+.flag {
+  margin: 5px;
+  -webkit-box-shadow: 0px 0px 46px -8px rgba(34, 60, 80, 0.42);
+  -moz-box-shadow: 0px 0px 46px -8px rgba(34, 60, 80, 0.42);
+  box-shadow: 0px 0px 46px -8px rgba(34, 60, 80, 0.42);
+}
+
+.head_name,
+.country__name,
+.country__capital,
+.country__population,
+.country__languages {
+  margin: 5px 0;
+  padding: 5px 0;
+}
+
+.native__names {
+  font-weight: 400;
+  margin: 2px 0;
+  padding: 2px 0;
+}
+
+.country__header,
+.country__name,
+.country__capital,
+.country__population,
+.country__languages,
+.country__flag {
+  border-radius: 10px;
+  border: 1px solid lightslategrey;
+  margin: 5px 0 10px 0;
+  padding: 5px;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.wrapper {
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #33c3f0;
+  left: 15%;
+  transform-origin: 50%;
+  animation: circle 0.5s alternate infinite ease;
+}
+
+@keyframes circle {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0%;
+  }
+}
+.circle:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+.circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+.shadow {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left: 15%;
+  filter: blur(1px);
+  animation: shadow 0.5s alternate infinite ease;
+}
+
+@keyframes shadow {
+  0% {
+    transform: scaleX(1.5);
+  }
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
+  }
+}
+.shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+.shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+.wrapper span {
+  position: absolute;
+  top: 75px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  letter-spacing: 12px;
+  color: #33c3f0;
+  left: 15%;
+}
+
+.pnotify {
+  border-radius: 10px;
+}
+.pnotify-container {
+  max-height: 100%;
+  overflow: auto;
+  border-radius: 10px;
+}
+.pnotify-text {
+  display: inline-block;
+  padding: 5px;
+}
+.pnotify-pre-line {
+  font-family: "Spartan";
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.pnotify-text::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
